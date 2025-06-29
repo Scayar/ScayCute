@@ -1,0 +1,243 @@
+:root {
+    --main-bg: #181818;
+    --accent: #ff003c;
+    --soft-white: #f8f8f8;
+    --glitch1: #ff003c;
+    --glitch2: #00fff7;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: var(--main-bg);
+    color: var(--soft-white);
+}
+
+.cute-body {
+    background: url('cute-cat.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background: rgba(255,255,255,0.15);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    padding: 2rem 3rem;
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.cat-img {
+    width: 320px;
+    max-width: 90vw;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+    transition: transform 0.5s cubic-bezier(.25,.8,.25,1);
+}
+.cat-img:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.modern-btn {
+    font-size: 2rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--accent), #ff7b00);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(255,0,60,0.2);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
+    outline: none;
+    margin-top: 1rem;
+    animation: pulse 1.5s infinite;
+}
+.modern-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 24px rgba(255,0,60,0.4);
+    background: linear-gradient(90deg, #ff7b00, var(--accent));
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 var(--accent, #ff003c); }
+    70% { box-shadow: 0 0 0 16px rgba(255,0,60,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,0,60,0); }
+}
+
+/* Scary Page Styles */
+.scary-body {
+    position: relative;
+    min-height: 100vh;
+    color: var(--soft-white);
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.5) contrast(1.2) saturate(1.2);
+    pointer-events: none;
+}
+.info {
+    position: relative;
+    z-index: 2;
+    padding: 1.1rem 0.5rem;
+    text-align: center;
+    max-width: 340px;
+    width: 98vw;
+    margin: 0 auto;
+    background: rgba(24, 24, 24, 0.65);
+    border-radius: 14px;
+    box-shadow: 0 0 32px 0 rgba(255,0,60,0.25), 0 8px 32px 0 rgba(31,38,135,0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.92rem;
+}
+.scary-h1 {
+    font-size: 1.05rem;
+    color: var(--accent);
+    text-shadow: 2px 2px 8px #000, 0 0 12px var(--accent);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+.glitch {
+    position: relative;
+    animation: glitch 1.2s infinite linear alternate-reverse;
+}
+@keyframes glitch {
+    0% { text-shadow: 2px 0 var(--glitch1), -2px 0 var(--glitch2); }
+    20% { text-shadow: -2px -2px var(--glitch2), 2px 2px var(--glitch1); }
+    40% { text-shadow: 2px 2px var(--glitch1), -2px -2px var(--glitch2); }
+    60% { text-shadow: -2px 2px var(--glitch2), 2px -2px var(--glitch1); }
+    80% { text-shadow: 2px -2px var(--glitch1), -2px 2px var(--glitch2); }
+    100% { text-shadow: -2px 0 var(--glitch2), 2px 0 var(--glitch1); }
+}
+.info-section {
+    background: rgba(0,0,0,0.82);
+    padding: 0.5rem 0.2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255,0,60,0.13);
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+.scary-p {
+    font-size: 0.92rem;
+    margin: 0.2rem 0;
+    color: var(--soft-white);
+    text-shadow: 1px 1px 3px #000;
+    word-break: break-word;
+}
+.warning {
+    margin: 0.5rem 0;
+}
+.scary-warning {
+    font-size: 0.92rem;
+    color: var(--accent);
+    text-shadow: 1px 1px 5px #000;
+    font-weight: bold;
+    animation: flicker 2s infinite alternate;
+}
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 22%, 24%, 55% {
+        opacity: 0.4;
+    }
+}
+
+#jumpscare {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.95) url('cute-cat.jpg') center center no-repeat;
+    background-size: cover;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.jumpscare-active {
+    opacity: 1 !important;
+    pointer-events: all;
+    background: #000 url('scary-video.mp4') center center no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 600px) {
+    .cat-img { width: 90vw; }
+    .info {
+        padding: 0.5rem 0.1rem;
+        max-width: 99vw;
+        border-radius: 10px;
+        font-size: 0.85rem;
+    }
+    .scary-h1 {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+    .info-section {
+        padding: 0.2rem 0.05rem;
+        border-radius: 6px;
+    }
+    .scary-p {
+        font-size: 0.85rem;
+        margin: 0.1rem 0;
+    }
+    .scary-warning {
+        font-size: 0.85rem;
+    }
+}
+
+.glass-btn {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.18);
+    transition: background 0.3s, box-shadow 0.3s, border 0.3s;
+}
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.35);
+}
+
+.flicker {
+    animation: flicker 1.2s infinite alternate, flickerColor 0.7s infinite alternate;
+}
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    10% { opacity: 0.7; }
+    20% { opacity: 0.4; }
+    30% { opacity: 0.9; }
+    40% { opacity: 0.5; }
+    50% { opacity: 1; }
+    60% { opacity: 0.6; }
+    70% { opacity: 0.8; }
+    80% { opacity: 0.3; }
+    90% { opacity: 0.9; }
+}
+@keyframes flickerColor {
+    0%, 100% { color: var(--accent); }
+    50% { color: #fff; }
+}

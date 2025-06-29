@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scary Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="scary-body">
+    <video autoplay loop muted class="background-video">
+        <source src="scary-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <audio id="scary-audio" preload="auto">
+        <source src="scary-audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <div class="info">
+        <h1 class="scary-h1 glitch" id="scary-title">SCAYAR STEALS YOUR INFORMATION!</h1>
+        <div class="info-section">
+            <p class="scary-p">IP Address: <span id="ip-address">Loading...</span></p>
+            <p class="scary-p">Country: <span id="country">Loading...</span></p>
+            <p class="scary-p">State: <span id="state">Loading...</span></p>
+            <p class="scary-p">City: <span id="city">Loading...</span></p>
+            <p class="scary-p">Zip Code: <span id="zip">Loading...</span></p>
+            <p class="scary-p">Latitude and Longitude: <span id="lat-lon">Loading...</span></p>
+            <p class="scary-p">Timezone: <span id="timezone">Loading...</span></p>
+            <p class="scary-p">Current Time: <span id="current-time"></span></p>
+            <p class="scary-p">Device Type: <span id="device-type">Loading...</span></p>
+            <p class="scary-p">Browser: <span id="browser-info"></span></p>
+            <p class="scary-p">Operating System: <span id="os-info"></span></p>
+            <p class="scary-p">ISP: <span id="isp"></span></p>
+            <p class="scary-p">ASN: <span id="asn"></span></p>
+            <p class="scary-p">Continent: <span id="continent"></span></p>
+            <p class="scary-p">Currency: <span id="currency"></span></p>
+            <p class="scary-p">Calling Code: <span id="calling-code"></span></p>
+        </div>
+        <div class="warning" id="warning-section">
+            <p class="scary-warning">**Caution:** Your location is being tracked!</p>
+            <p class="scary-warning">**Warning:** This information will be used against you!</p>
+            <p class="scary-warning">**Beware:** I know everything about you...</p>
+            <p class="scary-warning">**Attention:** Your secrets are not safe!</p>
+            <p class="scary-warning">**Threat Level:** Extremely High!</p>
+            <p class="scary-warning">**You are being monitored by a presence you cannot escape!**</p>
+        </div>
+        <p class="scary-p">Follow me on Instagram: <a href="https://www.instagram.com/im_scayar" style="color: red;">im_scayar</a></p>
+        <p class="scary-p">**Don't turn back!** You are being watched...</p>
+    </div>
+    <div id="jumpscare" class="jumpscare-hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>
