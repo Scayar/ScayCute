@@ -114,7 +114,7 @@ Please follow the code style and keep the README up to date.
 
 - **Name:** Talal
 - **Email:** [Scayar.exe@gmail.com](mailto:Scayar.exe@gmail.com)
-- **Website:** [scayar.me](https://scayar.com)
+- **Website:** [scayar.com](https://scayar.com)
 - **Telegram Group:** [Join Scayar Group](https://t.me/im_scayar)
 - **Buy Me a Coffee:** [Buy Me a Coffee](https://www.buymeacoffee.com/scayar)
 
