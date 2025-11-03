@@ -267,75 +267,100 @@ In `script.js`, find:
 
 ### User Interaction Flow
 
+<details>
+<summary><b>📊 View Flow Diagram</b></summary>
+
+```mermaid
+graph TD
+    A[🐱 Landing Page<br/>Cute Cat Background] -->|User Clicks Button| B[💫 Transition Effect<br/>600ms Fade Out]
+    B --> C{API Keys Configured?}
+    C -->|Yes| D[🌐 Fetch IP Geolocation<br/>Optional API Call]
+    C -->|No| E[Skip API Calls]
+    D --> F[📱 Send Telegram Alert<br/>Optional Notification]
+    F --> G
+    E --> G[👻 Scary Reveal Page]
+    G --> H[Display Device Info<br/>• Background Video<br/>• Glitch Effects<br/>• Flickering Warnings]
+    H --> I[⏱️ Wait 5-9 seconds]
+    I --> J[🎬 Random Jump Scare<br/>• Red Flash Overlay<br/>• Scary Face Popup<br/>• Loud Audio Scream]
+    
+    style A fill:#ff7b00,stroke:#ff003c,stroke-width:3px,color:#fff
+    style G fill:#ff003c,stroke:#00fff7,stroke-width:3px,color:#fff
+    style J fill:#000,stroke:#ff003c,stroke-width:4px,color:#fff
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    🐱 Landing Page                          │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │                                                      │   │
-│  │           [Cute Cat Background]                     │   │
-│  │                                                      │   │
-│  │            ┌────────────────────┐                   │   │
-│  │            │                    │                   │   │
-│  │            │   [Click Here]     │  ← User Clicks    │   │
-│  │            │                    │                   │   │
-│  │            └────────────────────┘                   │   │
-│  │                                                      │   │
-│  └──────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│            💫 Transition Effect (600ms)                     │
-│                 • Fade out animation                        │
-│                 • Check for API keys                        │
-│                 • Optional: Fetch IP data                   │
-│                 • Optional: Send Telegram alert             │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  👻 Scary Reveal Page                       │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  • Animated background video                         │   │
-│  │  • Device information display                        │   │
-│  │  • Glitch effects on text                            │   │
-│  │  • Flickering warnings                               │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                              │                               │
-│                              ▼                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │         Random Jump Scare (5-9 seconds)              │   │
-│  │  • Red flash overlay                                 │   │
-│  │  • Scary face popup                                  │   │
-│  │  • Loud audio scream                                 │   │
-│  └──────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
+
+</details>
 
 ### Technical Architecture
 
+<details>
+<summary><b>🏗️ View Architecture Diagram</b></summary>
+
+```mermaid
+graph TB
+    subgraph "🎨 Frontend Layer"
+        A[HTML5<br/>Semantic Structure]
+        B[CSS3<br/>Glassmorphism & Animations]
+        C[JavaScript<br/>DOM & Fetch API]
+    end
+    
+    subgraph "🖥️ Server Layer"
+        D[Simple HTTP Server<br/>Python http.server]
+        E[FastAPI Server<br/>Production Ready]
+    end
+    
+    subgraph "🔌 External APIs (Optional)"
+        F[🌍 ipgeolocation.io<br/>Location Data]
+        G[📱 Telegram Bot API<br/>Notifications]
+    end
+    
+    A --> D
+    B --> D
+    C --> D
+    A --> E
+    B --> E
+    C --> E
+    
+    D -.Optional.-> F
+    D -.Optional.-> G
+    E -.Optional.-> F
+    E -.Optional.-> G
+    
+    style A fill:#E34F26,stroke:#fff,stroke-width:2px,color:#fff
+    style B fill:#1572B6,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#F7DF1E,stroke:#000,stroke-width:2px
+    style D fill:#306998,stroke:#fff,stroke-width:2px,color:#fff
+    style E fill:#009688,stroke:#fff,stroke-width:2px,color:#fff
+    style F fill:#ff003c,stroke:#fff,stroke-width:2px,color:#fff
+    style G fill:#229ED9,stroke:#fff,stroke-width:2px,color:#fff
 ```
-┌─────────────────────────────────────────────────────────┐
-│                     Frontend Stack                      │
-├─────────────────────────────────────────────────────────┤
-│  HTML5         │ Semantic markup, structure              │
-│  CSS3          │ Glassmorphism, animations, responsive   │
-│  JavaScript    │ DOM manipulation, fetch API, timing     │
-└─────────────────────────────────────────────────────────┘
-                              │
-                    ┌─────────┴─────────┐
-                    │                   │
-        ┌───────────▼───────────┐    ┌─▼──────────────────┐
-        │   Simple HTTP Server  │    │ FastAPI Server     │
-        │   (Python/Python Any) │    │ (Production Ready) │
-        └───────────────────────┘    └───────────────────┘
-                              │
-                    ┌─────────┴─────────┐
-                    │                   │
-        ┌───────────▼────────────┐   ┌─▼───────────────────┐
-        │  ipgeolocation.io      │   │ Telegram Bot API    │
-        │  (Optional External)   │   │ (Optional External) │
-        └────────────────────────┘   └────────────────────┘
+
+</details>
+
+### 🎯 Feature Breakdown
+
+```mermaid
+mindmap
+  root((ScayCute))
+    Landing Page
+      Glassmorphic Design
+      Cute Cat Background
+      Pulse Animation
+      Modern Button
+    Scary Page
+      Background Video
+      Glitch Effects
+      Device Info Display
+      Flickering Warnings
+      Jump Scare System
+    Optional Features
+      IP Geolocation
+      Telegram Notifications
+      Custom Colors
+      Timing Control
+    Responsive Design
+      Mobile Support
+      Tablet Layout
+      Desktop View
 ```
 
 ---
