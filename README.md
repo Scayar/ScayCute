@@ -55,11 +55,21 @@
 
 ## ⚡ Quick Start
 
+**Option 1: Simple Python Server**
 ```bash
 git clone https://github.com/Scayar/ScayCute.git
 cd ScayCute
 python -m http.server 8000 --bind 0.0.0.0
 ```
+
+**Option 2: FastAPI Server**
+```bash
+git clone https://github.com/Scayar/ScayCute.git
+cd ScayCute
+pip install -r requirements.txt
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
 Open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ---
